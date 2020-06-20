@@ -1,0 +1,525 @@
+/* ----------------------------------------------------------------------------------------------------------------------------
+== GENERAL STYLES
+** ---------------------------------------------------------------------------------------------------------------------------- */
+
+html,
+body {
+  padding   : 0;
+  margin    : 0;
+  font      : 1em/1.4 Cambria, Georgia, sans-serif;
+  color     : #333;
+  background: #fff;
+}
+
+header,
+hgroup {
+  display: block;
+}
+
+a:link {
+  border-bottom  : 1px solid #c55500;
+  color          : #c55500;
+  text-decoration: none;
+}
+
+a:visited {
+  border-bottom: 1px solid #730800;
+  color        : #730800;
+}
+
+a:hover,
+a:focus,
+a:active {
+  border    : 0;
+  color     : #fff;
+  background: #c55500;
+}
+
+a:visited:hover,
+a:visited:focus,
+a:visited:active {
+  color     : #fff;
+  background: #730800;
+}
+
+.container {
+  width  : 640px;
+  padding: 0 0 10px;
+  margin : 0 auto 40px;
+}
+
+.header {
+  border-bottom: 1px solid #ddd;
+}
+
+.footer {
+  padding      : 10px 0 30px;
+  border-top   : 1px solid #ddd;
+  margin-bottom: 0;
+}
+
+h1 {
+  margin     : 1em 0 0;
+  font-size  : 2.5em;
+  font-weight: normal;
+  line-height: 1.2;
+  text-align : center;
+}
+
+h2 {
+  margin     : 0.5em 0 1.5em;
+  font-size  : 1.25em;
+  font-weight: normal;
+  font-style : italic;
+  text-align : center;
+}
+
+p {
+  margin     : 1em 0;
+  line-height: 1.4em;
+}
+
+pre {
+  margin     : 1.4em 0;
+  font-size  : 12px;
+  line-height: 1.4em;
+  white-space: pre-wrap;
+  word-wrap  : break-word;
+}
+
+.follow {
+  clear     : both;
+  margin-top: 2em;
+  font-size : 1.125em;
+}
+
+.follow span {
+  font-weight: bold;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------
+== SLIDING RULER
+** ---------------------------------------------------------------------------------------------------------------------------- */
+
+#ruler {
+  position      : relative;
+  z-index       : 1;
+  max-width     : 950px;
+  min-width     : 180px;
+  padding-bottom: 30px;
+  margin        : 20px auto 50px;
+  background    : url(images/ruler.png) no-repeat 0 100%;
+}
+
+#ruler:before {
+  content   : "";
+  position  : absolute;
+  z-index   : -1;
+  left      : 0;
+  bottom    : 0;
+  right     : 0;
+  height    : 26px;
+  background: url(images/ruler-overlay.png) no-repeat 100% 0;
+}
+
+#ruler p {
+  position   : relative;
+  padding    : 0 0 100px;
+  margin     : 0 50px 0 0;
+  text-align : center;
+  font-size  : 18px;
+  font-weight: bold;
+  color      : #7a4aad;
+}
+
+#ruler p:before {
+  content     : url(images/mr-impossible-body.png);
+  display     : block;
+  position    : absolute;
+  z-index     : -1;
+  right       : 0;
+  bottom      : 0;
+  left        : 0;
+  height      : 90px;
+  border-right: 1px solid #000;
+  text-align  : center;
+  background  : url(images/mr-impossible-left.png) no-repeat 0 39px;
+}
+
+#ruler p:after {
+  content   : "";
+  position  : absolute;
+  z-index   : -1;
+  bottom    : 25px;
+  right     : 0;
+  width     : 25px;
+  height    : 26px;
+  background: url(images/mr-impossible-right.png) no-repeat 100% 0;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------
+== SILVERBACK
+** ---------------------------------------------------------------------------------------------------------------------------- */
+
+#silverback {
+  position   : relative;
+  z-index    : 0;
+  min-width  : 200px;
+  min-height : 200px;
+  padding    : 120px 200px 50px;
+  margin     : 20px 0 40px;
+  font-size  : 2.5em;
+  font-weight: normal;
+  line-height: 1.2;
+  text-align : center;
+  background : #d3ff99 url(images/vines-back.png) -10% 0 repeat-x;
+}
+
+#silverback:before,
+#silverback:after {
+  position   : absolute;
+  z-index    : -1;
+  top        : 0;
+  left       : 0;
+  right      : 0;
+  bottom     : 0;
+  padding-top: 100px;
+}
+
+#silverback:before {
+  content     : url(images/gorilla-1.png);
+  padding-left: 3%;
+  text-align  : left;
+  background  : transparent url(images/vines-mid.png) 300% 0 repeat-x;
+}
+
+#silverback:after {
+  content      : url(images/gorilla-2.png);
+  padding-right: 3%;
+  text-align   : right;
+  background   : transparent url(images/vines-front.png) 70% 0 repeat-x;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------
+== FLUID FAUX COLUMNS
+** ---------------------------------------------------------------------------------------------------------------------------- */
+
+#faux {
+  position    : relative;
+  z-index     : 1;
+  width       : 80%;
+  border      : 1px solid #555;
+  border-width: 0 1px;
+  margin      : 20px auto 40px;
+  overflow    : hidden;
+  background  : #ffaf00;
+}
+
+#faux h2 {
+  margin     : 0.5em 0 1em;
+  font-size  : 1.125em;
+  font-weight: bold;
+  font-style : normal;
+  text-align : left;
+}
+
+#faux a {
+  border-color: #552887;
+  font-weight : bold;
+  color       : #552887;
+}
+
+#faux a:hover,
+#faux a:focus,
+#faux a:active {
+  color     : #fff;
+  background: #552887;
+}
+
+/* Positioning independent of source order
+   NOTE: You can use CSS2.1 selectors to avoid classes. However, this is kinder to IE6 if you care about that sort of thing */
+
+#faux div {
+  position  : relative;
+  float     : left;
+  width     : 30%;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+#faux .main {
+  left: 35%;
+}
+
+#faux .supp1 {
+  left: -28.5%;
+}
+
+#faux .supp2 {
+  left: 8.5%;
+}
+
+/* Create and position the columns of colour */
+
+#faux:before,
+#faux:after {
+  content   : "";
+  display   : block;
+  position  : absolute;
+  z-index   : -1;
+  top       : 0;
+  right     : 0;
+  bottom    : 0;
+  left      : 33.333%;
+  background: #f9b6ff;
+}
+
+#faux:after {
+  left      : 66.667%;
+  background: #79daff;
+}
+
+/* Adding a bit of fancy faux border */
+
+#faux div:first-child:before,
+#faux div:first-child:after {
+  content     : "";
+  display     : block;
+  position    : absolute;
+  z-index     : 1;
+  top         : 0;
+  bottom      : -800%;
+  left        : -6%;
+  width       : 2px;
+  border      : 1px solid #555;
+  border-width: 0 1px;
+  margin      : 0 0 0 -2px;
+  background  : #fff;
+}
+
+#faux div:first-child:after {
+  left  : auto;
+  right : -6%;
+  margin: 0 -2px 0 0;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------
+== DRIBBBLE
+** ---------------------------------------------------------------------------------------------------------------------------- */
+
+#dribbble {
+  width     : 500px;
+  margin    : 20px auto 50px;
+  text-align: center;
+}
+
+#dribbble a {
+  position             : relative;
+  display              : inline-block;
+  z-index              : 1;
+  padding              : 7px 12px;
+  border               : 0;
+  overflow             : hidden;
+  font-weight          : bold;
+  font-family          : Arial, sans-serif;
+  color                : #666;
+  background           : #e0e0e0;
+  /* css3 */
+  -webkit-border-radius: 6px;
+  -moz-border-radius   : 6px;
+  border-radius        : 6px;
+}
+
+/* Opera 10.5 gets this next bit wrong. It seems to calculate :before {right:0} before drawing the :after {content:"\00bb";}
+   You can get around this by absolutely positioning the :after pseudo-element instead */
+
+#dribbble a:before {
+  content              : "";
+  display              : block;
+  position             : absolute;
+  z-index              : -1;
+  top                  : 50%;
+  left                 : 0;
+  right                : 0;
+  bottom               : 0;
+  background           : #d3d3d3;
+  /* css3 */
+  -webkit-border-radius: 0 0 6px 6px;
+  -moz-border-radius   : 0 0 6px 6px;
+  border-radius        : 0 0 6px 6px;
+}
+
+#dribbble a:after {
+  content     : "\00bb";
+  padding-left: 5px;
+}
+
+#dribbble a:hover,
+#dribbble a:focus,
+#dribbble a:active {
+  color     : #fff;
+  background: #ec6196;
+}
+
+#dribbble a:hover:before {
+  background: #ea4c88;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------
+== SPRITE
+** ---------------------------------------------------------------------------------------------------------------------------- */
+
+#sprite {
+  position  : relative;
+  z-index   : 1;
+  width     : 430px;
+  padding   : 85px;
+  border    : 1px solid #ddd;
+  margin    : 0 auto 40px;
+  overflow  : hidden;
+  background: #fff url(images/flowers.png) no-repeat -150px 0;
+}
+
+#sprite:before,
+#sprite:after {
+  content   : "";
+  position  : absolute;
+  z-index   : -1;
+  top       : 0px;
+  right     : 0;
+  width     : 75px;
+  height    : 128px;
+  background: #fff url(images/flowers.png) no-repeat -75px 0;
+}
+
+#sprite:after {
+  top                : auto;
+  bottom             : 0;
+  right              : 0;
+  background-position: 0 0;
+  opacity            : 0.5;
+}
+
+
+
+
+
+/* ----------------------------------------------------------------------------------------------------------------------------
+== OUTSIDE
+** ---------------------------------------------------------------------------------------------------------------------------- */
+
+#outside {
+  width    : 50%;
+  min-width: 500px;
+  border   : 1px solid #ddd;
+  margin   : 0 auto 40px;
+  font     : 16px Arial, sans-serif;
+}
+
+#outside h2 {
+  margin     : 0;
+  font-size  : 26px;
+  font-weight: bold;
+  font-style : normal;
+  text-align : left;
+}
+
+#outside .hero {
+  position  : relative;
+  z-index   : 1;
+  padding   : 20px;
+  background: #eee;
+}
+
+#outside .hero:before {
+  content   : "";
+  float     : right;
+  position  : relative;
+  z-index   : -1;
+  top       : -10px;
+  margin    : 0 -50px 0px 20px;
+  width     : 195px;
+  height    : 230px;
+  background: url(images/the-box.png) no-repeat 0 0;
+}
+
+#outside .main {
+  padding: 10px 20px 20px;
+}
+
+
+
+
+
+/* ----------------------------------------------------------------------------------------------------------------------------
+== FOLDED CORNER
+** ---------------------------------------------------------------------------------------------------------------------------- */
+
+#corner {
+  position  : relative;
+  width     : 40%;
+  min-width : 250px;
+  padding   : 20px 60px 50px;
+  margin    : 0 auto 40px;
+  text-align: center;
+  font      : 26px "Comic sans MS", sans-serif;
+  background: #f4d416 url(images/pencil.png) no-repeat 0 50%;
+}
+
+#corner:before {
+  content     : "";
+  position    : absolute;
+  top         : 0;
+  right       : 0;
+  border-width: 20px;
+  border-style: solid;
+  border-color: #fff #fff #debc08 #debc08;
+}
+
+#corner:after {
+  content     : url(images/fly.png);
+  position    : absolute;
+  bottom      : 5px;
+  right       : 5px;
+  width       : 15%;
+  height      : 40px;
+  padding-left: 60px;
+  text-align  : right;
+  background  : url(images/spider.png) no-repeat 0 0;
+}
+
+
+
+
+
+/* ----------------------------------------------------------------------------------------------------------------------------
+== J4D
+** ---------------------------------------------------------------------------------------------------------------------------- */
+
+#j4d {
+  position  : relative;
+  z-index   : 1;
+  width     : 520px;
+  padding   : 40px;
+  margin    : 20px auto 40px;
+  overflow  : hidden;
+  background: url(images/j4d-top.png) no-repeat 0 0;
+}
+
+#j4d:before,
+#j4d:after {
+  content   : "";
+  position  : absolute;
+  z-index   : -1;
+  top       : 39px;
+  right     : 0;
+  bottom    : 36px;
+  left      : 0;
+  background: url(images/j4d-sides.png) no-repeat 0 0;
+}
+
+#j4d:after {
+  top       : auto;
+  bottom    : 0;
+  height    : 36px;
+  background: url(images/j4d-bottom.png) no-repeat 0 0;
+}
