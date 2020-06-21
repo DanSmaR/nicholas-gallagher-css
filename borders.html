@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How to use CSS2 to create multiple borders from one HTML element. Uses CSS2 generated content and pseudo-elements.">
+  <link rel="stylesheet" href="borders.css">
+  <title>Demo: Multiple Borders with CSS 2.1 &#8211; Nicolas Gallagher</title>
+</head>
+<body>
+  <div class="container header">
+    <header>
+      <hgroup>
+        <h1>Multiple Borders with CSS 2.1</h1>
+        <h2>By <a href="http://nicolasgallagher.com" target="blank">Nicholas Gallagher</a></h2>
+      </hgroup>
+      <p>Multiple Borders demo for <a href="http://nicolasgallagher.com/multiple-backgrounds-and-borders-with-css2/" target="blank">Multiple Backgrounds and Borders with CSS 2.1</a>. You'll have to <a href="borders.css">view the CSS file</a> because Firebug won't show pseudo-elements.</p>
+      <p><em>Fit for Purpose</em>: Firefox 3.5+, Safari 4+, Chrome 4+, Opera 10+, Internet Explorer 8+.</p>
+    </header>
+  </div>
+
+  <div class="examples">
+    <div class="section">
+      <div id="full-border1">A <code>div</code> containing <a href="#non">some content</a></div>
+      <div id="full-border2">A <code>div</code> containing <a href="#non">some content</a></div>
+      <div id="full-border3">A <code>div</code> containing <a href="#non">some content</a></div>
+      <div id="full-border4">A <code>div</code> containing <a href="#non">some content</a></div>
+      <div id="full-border5"><p>A<code>div</code> with at least one child element provides 7 "borders".</p></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div id="two-colour">Popular two-colour border without images</div>
+    <div id="single-max">Up to 7 single-side "borders" from one element. Actually, 8 if you are prepared to show some of the element's background colour as a fake border.</div>
+    <div id="irregular">
+      <h2><a href="http://forabeautifulweb.com/blog">FABW</a>'s complex borders</h2>
+      <div class="content">
+        <div class="article">
+          <h4><a href="#non">No images used to create these borders</a></h4>
+          <p>Vivamus auctor, tellus vel dictum pulvinar, a congue elit odio vel enim. Quisque fringilla semper fermentum. Nulla a felis a diam dapibus accumsan.</p>
+          <div class="foot">
+            <div class="time">9th Jun 2010</div>
+            <a href="" title="12 replies" class="comments">12</a>
+          </div>
+        </div>
+      </div>
+      <div class="supp">
+        <p>Vivamus auctor, tellus vel dictum pulvinar, a congue elit odio vel enim. Quisque fringilla semper fermentum.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- End of exmaples -->
+
+  <div class="container footer">
+    <p>Read the Article: <a href="http://nicolasgallagher.com/multiple-backgrounds-and-borders-with-css2/">Multiple Backgrounds and Borders with CSS 2.1</a>.</p>
+    <p class="follow"><a href="http://twitter.com/necolas">You can find me on <span>twitter</span></a>.</p>
+  </div>
+</body>
+</html>
